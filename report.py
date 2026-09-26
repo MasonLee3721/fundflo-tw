@@ -230,8 +230,16 @@ def build(sector_id, date=None):
 
 def _inline(t):
     t = _html.escape(t)
+    t = _MD_LINK_RE.sub(lambda m: _ext_link(m.group(2), m.group(1)), t)
     t = link_tickers(t)
     return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+
+
+_MD_LINK_RE = re.compile(r'\[([^\]]+)\]\(([^)\s]+)\)')
+
+
+def _ext_link(url, label):
+    return f'<a class="tk" href="{url}" target="_blank" rel="noopener">{label}</a>'
 
 
 WANTGOO_CHART = 'https://www.wantgoo.com/stock/{}/technical-chart'
@@ -246,11 +254,10 @@ except Exception:
 
 
 def _ticker_link(code, label):
-    return (f'<a class="tk" href="{WANTGOO_CHART.format(code)}"'
-            f' target="_blank" rel="noopener">{label}</a>')
+    return _ext_link(WANTGOO_CHART.format(code), label)
 
 
-_TK_RE = re.compile(r'(?<!\d)(\d{4})(\s+)([\u4e00-\u9fff][\u4e00-\u9fffA-Za-z0-9·・－—\-]{0,11})')
+_TK_RE = re.compile(r'(?<!\d)(\d{4})(\s*)([\u4e00-\u9fff][\u4e00-\u9fffA-Za-z0-9·・－—\-]{0,11})')
 
 
 def link_tickers(t):
