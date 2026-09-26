@@ -92,7 +92,7 @@ def macro_section(c, D):
         dx_txt = f'單日 {chg:+.2f} 點（{sdx[-2][0]}→{ddx}）'
     L.append('| 指標 | 水準 | 變化／狀態 |')
     L.append('|---|---|---|')
-    L.append(f'| [美國 10Y 公債殖利率](https://fred.stlouisfed.org/series/DGS10) | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
+    L.append(f'| [美國 10Y 公債殖利率](https://www.wantgoo.com/global/us10-yr) | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
     L.append(f'| [美元指數](https://www.wantgoo.com/global/usdindex) | {f"{vdx:.2f}" if vdx is not None else "—"}（{ddx or "無"}） | {dx_txt} |')
     L.append(f'| [10Y 期限溢價（ACM）](https://www.newyorkfed.org/research/data_indicators/term-premia-tabs) | {tp_txt}{alert_tp} | 心理面：愈高代表市場愈謹慎 |')
     L.append(f'| [10Y-2Y 利差](https://fred.stlouisfed.org/series/T10Y2Y) | {spread_txt} | 一句話：曲線形狀看景氣預期 |')
