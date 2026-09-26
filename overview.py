@@ -85,9 +85,9 @@ def macro_section(c, D):
             alert_tp = ' ⚠達警戒'
     L.append('| 指標 | 水準 | 變化／狀態 |')
     L.append('|---|---|---|')
-    L.append(f'| 美國 10Y 公債殖利率 | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
-    L.append(f'| 10Y 期限溢價（ACM） | {tp_txt}{alert_tp} | 心理面：愈高代表市場愈謹慎 |')
-    L.append(f'| 10Y-2Y 利差 | {spread_txt} | 一句話：曲線形狀看景氣預期 |')
+    L.append(f'| [美國 10Y 公債殖利率](https://fred.stlouisfed.org/series/DGS10) | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
+    L.append(f'| [10Y 期限溢價（ACM）](https://www.newyorkfed.org/research/data_indicators/term-premia-tabs) | {tp_txt}{alert_tp} | 心理面：愈高代表市場愈謹慎 |')
+    L.append(f'| [10Y-2Y 利差](https://fred.stlouisfed.org/series/T10Y2Y) | {spread_txt} | 一句話：曲線形狀看景氣預期 |')
     L.append('')
     L.append(TRANSMISSION)
     L.append('')
@@ -95,7 +95,7 @@ def macro_section(c, D):
 
 
 def twd_section(c, D):
-    L = ['## 二、台幣匯率技術面（Yahoo 參考匯率，非央行收盤價；數字愈大＝台幣愈貶）']
+    L = ['## 二、[台幣匯率技術面](https://www.investing.com/currencies/usd-twd)（Yahoo 參考匯率，非央行收盤價；數字愈大＝台幣愈貶）']
     s = _series(c, 'macro_daily', 'twd', D, 30)
     if len(s) < 2:
         L.append('無資料'); L.append('')
