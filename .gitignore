@@ -1,0 +1,5 @@
+fundflo.db
+*.log
+__pycache__/
+*.bak_*
+.DS_Store
