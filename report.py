@@ -37,6 +37,8 @@ th{background:#f2f2f2;font-weight:700;text-align:center}
 td.num{text-align:right;font-variant-numeric:tabular-nums}
 td.pos{color:#c0392b;font-weight:600}
 td.neg{color:#1e8449;font-weight:600}
+a.tk{color:#1a56db;text-decoration:none;border-bottom:1px dotted #1a56db}
+a.tk:hover{color:#c0392b;border-bottom-style:solid}
 ul{margin:6px 0;padding-left:1.4em;font-size:.88rem}
 li{margin:4px 0}
 p{font-size:.9rem}
@@ -228,7 +230,49 @@ def build(sector_id, date=None):
 
 def _inline(t):
     t = _html.escape(t)
+    t = link_tickers(t)
     return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', t)
+
+
+WANTGOO_CHART = 'https://www.wantgoo.com/stock/{}/technical-chart'
+
+try:
+    _CODE_NAMES = {}
+    for sec in compute.load_basket()['sectors']:
+        for s in sec['stocks']:
+            _CODE_NAMES.setdefault(s['code'], set()).add(s['name'])
+except Exception:
+    _CODE_NAMES = {}
+
+
+def _ticker_link(code, label):
+    return (f'<a class="tk" href="{WANTGOO_CHART.format(code)}"'
+            f' target="_blank" rel="noopener">{label}</a>')
+
+
+_TK_RE = re.compile(r'(?<!\d)(\d{4})(\s+)([\u4e00-\u9fff][\u4e00-\u9fffA-Za-z0-9·・－—\-]{0,11})')
+
+
+def link_tickers(t):
+    """把股票代號連到玩股網技術線圖。t 為已 escape、尚無 HTML 的純文字。"""
+    s = t.strip()
+    if re.fullmatch(r'\d{4}', s):
+        return _ticker_link(s, s)
+
+    def repl(m):
+        code, got = m.group(1), m.group(3)
+        names = _CODE_NAMES.get(code)
+        if names:
+            best = ''
+            for i in range(min(len(got), 12), 0, -1):
+                if got[:i] in names:
+                    best = got[:i]
+                    break
+            if best:
+                return _ticker_link(code, code + m.group(2) + best) + got[len(best):]
+        return m.group(0)
+
+    return _TK_RE.sub(repl, t)
 
 
 def _cell_cls(c):
