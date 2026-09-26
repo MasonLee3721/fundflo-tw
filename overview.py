@@ -83,9 +83,17 @@ def macro_section(c, D):
         tp_txt = f'{vtp:.2f}%（資料日 {dtp}）' + ('，**突破20日高點** ⚠' if breakout else '，未突破20日高點')
         if breakout:
             alert_tp = ' ⚠達警戒'
+    # 美元指數
+    ddx, vdx = _latest_le(c, 'macro_daily', 'usdx', D)
+    sdx = _series(c, 'macro_daily', 'usdx', D, 3)
+    dx_txt = '—'
+    if vdx is not None and len(sdx) >= 2:
+        chg = sdx[-1][1] - sdx[-2][1]
+        dx_txt = f'單日 {chg:+.2f} 點（{sdx[-2][0]}→{ddx}）'
     L.append('| 指標 | 水準 | 變化／狀態 |')
     L.append('|---|---|---|')
     L.append(f'| [美國 10Y 公債殖利率](https://fred.stlouisfed.org/series/DGS10) | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
+    L.append(f'| [美元指數](https://www.wantgoo.com/global/usdindex) | {f"{vdx:.2f}" if vdx is not None else "—"}（{ddx or "無"}） | {dx_txt} |')
     L.append(f'| [10Y 期限溢價（ACM）](https://www.newyorkfed.org/research/data_indicators/term-premia-tabs) | {tp_txt}{alert_tp} | 心理面：愈高代表市場愈謹慎 |')
     L.append(f'| [10Y-2Y 利差](https://fred.stlouisfed.org/series/T10Y2Y) | {spread_txt} | 一句話：曲線形狀看景氣預期 |')
     L.append('')
@@ -95,7 +103,7 @@ def macro_section(c, D):
 
 
 def twd_section(c, D):
-    L = ['## 二、[台幣匯率技術面](https://www.investing.com/currencies/usd-twd)（Yahoo 參考匯率，非央行收盤價；數字愈大＝台幣愈貶）']
+    L = ['## 二、[台幣匯率技術面](https://www.wantgoo.com/global/usdtwd)（Yahoo 參考匯率，非央行收盤價；數字愈大＝台幣愈貶）']
     s = _series(c, 'macro_daily', 'twd', D, 30)
     if len(s) < 2:
         L.append('無資料'); L.append('')
