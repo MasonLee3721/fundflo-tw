@@ -1,0 +1,3051 @@
+{
+ "source": "台股38族群代表股_20260926.xlsx（38族群代表股工作表）",
+ "note": "2026-09-26 以用戶 32 族群為標準，合併 10 分類新增 6 族群（SEC_33~38）；6806 已下市移除",
+ "sectors": [
+  {
+   "id": "SEC_01",
+   "name": "晶圓代工與先進製程",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2330",
+     "name": "台積電",
+     "note": "",
+     "role": "龍頭霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2303",
+     "name": "聯電",
+     "note": "",
+     "role": "成熟主力",
+     "sub_theme": null
+    },
+    {
+     "code": "5347",
+     "name": "世界先進",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "6770",
+     "name": "力積電",
+     "note": "",
+     "role": "產能指標",
+     "sub_theme": null
+    },
+    {
+     "code": "3707",
+     "name": "漢磊",
+     "note": "",
+     "role": "化合物代工",
+     "sub_theme": null
+    },
+    {
+     "code": "3016",
+     "name": "嘉晶",
+     "note": "",
+     "role": "化合物材料",
+     "sub_theme": null
+    },
+    {
+     "code": "6488",
+     "name": "環球晶",
+     "note": "",
+     "role": "材料耗材",
+     "sub_theme": null
+    },
+    {
+     "code": "5483",
+     "name": "中美晶",
+     "note": "",
+     "role": "矽晶圓控股",
+     "sub_theme": null
+    },
+    {
+     "code": "3532",
+     "name": "台勝科",
+     "note": "",
+     "role": "12吋矽晶圓",
+     "sub_theme": null
+    },
+    {
+     "code": "6182",
+     "name": "合晶",
+     "note": "",
+     "role": "重摻矽晶圓",
+     "sub_theme": null
+    },
+    {
+     "code": "8028",
+     "name": "昇陽半導體",
+     "note": "",
+     "role": "再生晶圓",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_02",
+   "name": "IC 設計 - 運算與主晶片",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2454",
+     "name": "聯發科",
+     "note": "",
+     "role": "手機SoC龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3661",
+     "name": "世芯-KY",
+     "note": "",
+     "role": "ASIC雲端算力",
+     "sub_theme": null
+    },
+    {
+     "code": "3443",
+     "name": "創意",
+     "note": "",
+     "role": "台積電ASIC",
+     "sub_theme": null
+    },
+    {
+     "code": "3035",
+     "name": "智原",
+     "note": "",
+     "role": "聯電ASIC",
+     "sub_theme": null
+    },
+    {
+     "code": "6643",
+     "name": "M31",
+     "note": "",
+     "role": "傳輸介面IP",
+     "sub_theme": null
+    },
+    {
+     "code": "3529",
+     "name": "力旺",
+     "note": "",
+     "role": "嵌入式安全IP",
+     "sub_theme": null
+    },
+    {
+     "code": "6533",
+     "name": "晶心科",
+     "note": "",
+     "role": "RISC-V架構IP",
+     "sub_theme": null
+    },
+    {
+     "code": "2379",
+     "name": "瑞昱",
+     "note": "",
+     "role": "網通Switch",
+     "sub_theme": null
+    },
+    {
+     "code": "6526",
+     "name": "達發",
+     "note": "",
+     "role": "寬頻藍牙晶片",
+     "sub_theme": null
+    },
+    {
+     "code": "5274",
+     "name": "信驊",
+     "note": "",
+     "role": "伺服器BMC",
+     "sub_theme": null
+    },
+    {
+     "code": "3227",
+     "name": "原相",
+     "note": "",
+     "role": "光學感測晶片",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_03",
+   "name": "IC 設計 - 利基與驅動/電源",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3034",
+     "name": "聯詠",
+     "note": "",
+     "role": "驅動IC龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4966",
+     "name": "譜瑞-KY",
+     "note": "",
+     "role": "高速傳輸Retimer",
+     "sub_theme": null
+    },
+    {
+     "code": "6415",
+     "name": "矽力*-KY",
+     "note": "",
+     "role": "電源管理PMIC",
+     "sub_theme": null
+    },
+    {
+     "code": "4919",
+     "name": "新唐",
+     "note": "",
+     "role": "車用工控MCU",
+     "sub_theme": null
+    },
+    {
+     "code": "3592",
+     "name": "瑞鼎",
+     "note": "",
+     "role": "AMOLED驅動",
+     "sub_theme": null
+    },
+    {
+     "code": "8016",
+     "name": "矽創",
+     "note": "",
+     "role": "工控微型驅動",
+     "sub_theme": null
+    },
+    {
+     "code": "6756",
+     "name": "威鋒電子",
+     "note": "",
+     "role": "USB4控制晶片",
+     "sub_theme": null
+    },
+    {
+     "code": "6138",
+     "name": "茂達",
+     "note": "",
+     "role": "風扇驅動/PMIC",
+     "sub_theme": null
+    },
+    {
+     "code": "2436",
+     "name": "偉詮電",
+     "note": "",
+     "role": "快充PD控制",
+     "sub_theme": null
+    },
+    {
+     "code": "6237",
+     "name": "驊訊",
+     "note": "",
+     "role": "音訊傳輸控制",
+     "sub_theme": null
+    },
+    {
+     "code": "8081",
+     "name": "致新",
+     "note": "",
+     "role": "面板PC PMIC",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_04",
+   "name": "先進封裝與測試 (CoWoS/OSAT)",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3711",
+     "name": "日月光投控",
+     "note": "",
+     "role": "封測龍頭霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2449",
+     "name": "京元電子",
+     "note": "",
+     "role": "高階AI測試主力",
+     "sub_theme": null
+    },
+    {
+     "code": "6223",
+     "name": "旺矽",
+     "note": "",
+     "role": "VPC探針卡龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6515",
+     "name": "穎崴",
+     "note": "",
+     "role": "測試座Socket",
+     "sub_theme": null
+    },
+    {
+     "code": "6239",
+     "name": "力成",
+     "note": "",
+     "role": "記憶體封測/FOPLP",
+     "sub_theme": null
+    },
+    {
+     "code": "3264",
+     "name": "欣銓",
+     "note": "",
+     "role": "車用晶圓測試",
+     "sub_theme": null
+    },
+    {
+     "code": "6257",
+     "name": "矽格",
+     "note": "",
+     "role": "手機網通封測",
+     "sub_theme": null
+    },
+    {
+     "code": "8150",
+     "name": "南茂",
+     "note": "",
+     "role": "驅動記憶體封測",
+     "sub_theme": null
+    },
+    {
+     "code": "6683",
+     "name": "雍智科技",
+     "note": "",
+     "role": "IC測試載板",
+     "sub_theme": null
+    },
+    {
+     "code": "3265",
+     "name": "台星科",
+     "note": "",
+     "role": "凸塊與先進封裝",
+     "sub_theme": null
+    },
+    {
+     "code": "2441",
+     "name": "超豐",
+     "note": "",
+     "role": "傳統封裝產能",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_05",
+   "name": "半導體設備與特用化學",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3131",
+     "name": "弘塑",
+     "note": "",
+     "role": "CoWoS濕製程龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3583",
+     "name": "辛耘",
+     "note": "",
+     "role": "濕製程自製與代理",
+     "sub_theme": null
+    },
+    {
+     "code": "3680",
+     "name": "家登",
+     "note": "",
+     "role": "光罩傳送盒FOUP",
+     "sub_theme": null
+    },
+    {
+     "code": "3413",
+     "name": "京鼎",
+     "note": "",
+     "role": "應材代工核心",
+     "sub_theme": null
+    },
+    {
+     "code": "2404",
+     "name": "漢唐",
+     "note": "",
+     "role": "無塵室統包龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "5536",
+     "name": "聖暉*",
+     "note": "",
+     "role": "無塵室機電整合",
+     "sub_theme": null
+    },
+    {
+     "code": "6196",
+     "name": "帆宣",
+     "note": "",
+     "role": "極紫外光模組代工",
+     "sub_theme": null
+    },
+    {
+     "code": "1773",
+     "name": "勝一",
+     "note": "",
+     "role": "電子級溶劑龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "5434",
+     "name": "崇越",
+     "note": "",
+     "role": "光阻矽晶圓代理",
+     "sub_theme": null
+    },
+    {
+     "code": "4770",
+     "name": "上品",
+     "note": "",
+     "role": "氟素內襯防腐槽",
+     "sub_theme": null
+    },
+    {
+     "code": "3551",
+     "name": "世禾",
+     "note": "",
+     "role": "精密洗淨龍頭",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_06",
+   "name": "記憶體與控制晶片",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2408",
+     "name": "南亞科",
+     "note": "",
+     "role": "DRAM製造大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "2344",
+     "name": "華邦電",
+     "note": "",
+     "role": "利基DRAM/NOR",
+     "sub_theme": null
+    },
+    {
+     "code": "2337",
+     "name": "旺宏",
+     "note": "",
+     "role": "全球NOR/ROM",
+     "sub_theme": null
+    },
+    {
+     "code": "8299",
+     "name": "群聯",
+     "note": "",
+     "role": "NAND控制晶片龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3260",
+     "name": "威剛",
+     "note": "",
+     "role": "記憶體模組龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4967",
+     "name": "十銓",
+     "note": "",
+     "role": "電競高階模組",
+     "sub_theme": null
+    },
+    {
+     "code": "3006",
+     "name": "晶豪科",
+     "note": "",
+     "role": "利基型記憶體IC",
+     "sub_theme": null
+    },
+    {
+     "code": "5289",
+     "name": "宜鼎",
+     "note": "",
+     "role": "工控儲能AIoT",
+     "sub_theme": null
+    },
+    {
+     "code": "8088",
+     "name": "華亞",
+     "note": "",
+     "role": "工控記憶體",
+     "sub_theme": null
+    },
+    {
+     "code": "4951",
+     "name": "精拓科",
+     "note": "",
+     "role": "存儲傳輸IC",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_07",
+   "name": "AI 伺服器與 ODM 組裝",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2382",
+     "name": "廣達",
+     "note": "",
+     "role": "AI機櫃系統龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2317",
+     "name": "鴻海",
+     "note": "",
+     "role": "垂直整合代工霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "3231",
+     "name": "緯創",
+     "note": "",
+     "role": "GPU運算主機板主力",
+     "sub_theme": null
+    },
+    {
+     "code": "6669",
+     "name": "緯穎",
+     "note": "",
+     "role": "白牌CSP雲端專注",
+     "sub_theme": null
+    },
+    {
+     "code": "2356",
+     "name": "英業達",
+     "note": "",
+     "role": "伺服器主機板代工",
+     "sub_theme": null
+    },
+    {
+     "code": "2376",
+     "name": "技嘉",
+     "note": "",
+     "role": "品牌AI伺服器/板卡",
+     "sub_theme": null
+    },
+    {
+     "code": "2357",
+     "name": "華碩",
+     "note": "",
+     "role": "系統品牌與邊緣運算",
+     "sub_theme": null
+    },
+    {
+     "code": "3706",
+     "name": "神達",
+     "note": "",
+     "role": "雲端伺服器整合商",
+     "sub_theme": null
+    },
+    {
+     "code": "2395",
+     "name": "研華",
+     "note": "",
+     "role": "工業邊緣AI平台",
+     "sub_theme": null
+    },
+    {
+     "code": "4938",
+     "name": "和碩",
+     "note": "",
+     "role": "消費組裝與車載",
+     "sub_theme": null
+    },
+    {
+     "code": "2324",
+     "name": "仁寶",
+     "note": "",
+     "role": "NB與伺服器組裝",
+     "sub_theme": null
+    },
+    {
+     "code": "2059",
+     "name": "川湖",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_08",
+   "name": "散熱與水冷模組",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3017",
+     "name": "奇鋐",
+     "note": "",
+     "role": "模組水冷板龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3324",
+     "name": "雙鴻",
+     "note": "",
+     "role": "水冷CDU系統先驅",
+     "sub_theme": null
+    },
+    {
+     "code": "2421",
+     "name": "建準",
+     "note": "",
+     "role": "伺服器散熱風扇",
+     "sub_theme": null
+    },
+    {
+     "code": "8996",
+     "name": "高力",
+     "note": "",
+     "role": "板式熱交換器龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3013",
+     "name": "晟銘電",
+     "note": "",
+     "role": "水冷機箱機構件",
+     "sub_theme": null
+    },
+    {
+     "code": "3653",
+     "name": "健策",
+     "note": "",
+     "role": "高階晶片均熱片龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3483",
+     "name": "力致",
+     "note": "",
+     "role": "均溫板與浸沒散熱",
+     "sub_theme": null
+    },
+    {
+     "code": "6230",
+     "name": "超眾",
+     "note": "",
+     "role": "日本電產伺服散熱",
+     "sub_theme": null
+    },
+    {
+     "code": "6125",
+     "name": "廣運",
+     "note": "",
+     "role": "雙相浸沒水冷工程",
+     "sub_theme": null
+    },
+    {
+     "code": "4541",
+     "name": "晟田",
+     "note": "",
+     "role": "液冷快接頭精密加工",
+     "sub_theme": null
+    },
+    {
+     "code": "3338",
+     "name": "泰碩",
+     "note": "",
+     "role": "伺服器導熱組件",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_09",
+   "name": "PCB、高階載板與 CCL",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2383",
+     "name": "台光電",
+     "note": "",
+     "role": "AI伺服器CCL霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "3037",
+     "name": "欣興",
+     "note": "",
+     "role": "ABF載板龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2368",
+     "name": "金像電",
+     "note": "",
+     "role": "伺服器高多層板龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6274",
+     "name": "台燿",
+     "note": "",
+     "role": "高頻高速CCL主力",
+     "sub_theme": null
+    },
+    {
+     "code": "8046",
+     "name": "南電",
+     "note": "",
+     "role": "台塑ABF/BT載板",
+     "sub_theme": null
+    },
+    {
+     "code": "3189",
+     "name": "景碩",
+     "note": "",
+     "role": "和碩記憶體載板",
+     "sub_theme": null
+    },
+    {
+     "code": "6213",
+     "name": "聯茂",
+     "note": "",
+     "role": "高速伺服器CCL",
+     "sub_theme": null
+    },
+    {
+     "code": "4958",
+     "name": "臻鼎-KY",
+     "note": "",
+     "role": "全球PCB營收龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3044",
+     "name": "健鼎",
+     "note": "",
+     "role": "記憶體與車用硬板",
+     "sub_theme": null
+    },
+    {
+     "code": "2313",
+     "name": "華通",
+     "note": "",
+     "role": "低軌衛星HDI霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "6191",
+     "name": "精成科",
+     "note": "",
+     "role": "PC/車用板加工",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_10",
+   "name": "光通訊與 CPO",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3450",
+     "name": "聯鈞",
+     "note": "",
+     "role": "雷射封裝與CPO佈局",
+     "sub_theme": null
+    },
+    {
+     "code": "6442",
+     "name": "光聖",
+     "note": "",
+     "role": "光纖被動連接跳線",
+     "sub_theme": null
+    },
+    {
+     "code": "3363",
+     "name": "上詮",
+     "note": "",
+     "role": "光纖陣列單元FAU",
+     "sub_theme": null
+    },
+    {
+     "code": "3163",
+     "name": "波若威",
+     "note": "",
+     "role": "分光多工器WDM",
+     "sub_theme": null
+    },
+    {
+     "code": "4977",
+     "name": "眾達-KY",
+     "note": "",
+     "role": "雲端資料中心收發",
+     "sub_theme": null
+    },
+    {
+     "code": "4908",
+     "name": "前鼎",
+     "note": "",
+     "role": "800G收發模組",
+     "sub_theme": null
+    },
+    {
+     "code": "3081",
+     "name": "聯亞",
+     "note": "",
+     "role": "InP光通訊磊晶龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3234",
+     "name": "光環",
+     "note": "",
+     "role": "VCSEL面射型雷射",
+     "sub_theme": null
+    },
+    {
+     "code": "4979",
+     "name": "華星光",
+     "note": "",
+     "role": "北美雲端傳輸元件",
+     "sub_theme": null
+    },
+    {
+     "code": "6451",
+     "name": "訊芯-KY",
+     "note": "",
+     "role": "800G CPO SiP封裝",
+     "sub_theme": null
+    },
+    {
+     "code": "3167",
+     "name": "大量",
+     "note": "",
+     "role": "光學檢查與PCB成型",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_11",
+   "name": "電源供應器與機殼導軌",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2308",
+     "name": "台達電",
+     "note": "",
+     "role": "全球高階電源霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2301",
+     "name": "光寶科",
+     "note": "",
+     "role": "伺服器電源雙雄",
+     "sub_theme": null
+    },
+    {
+     "code": "2059",
+     "name": "川湖",
+     "note": "",
+     "role": "伺服器導軌市占過半",
+     "sub_theme": null
+    },
+    {
+     "code": "8210",
+     "name": "勤誠",
+     "note": "",
+     "role": "伺服器機殼龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6805",
+     "name": "富世達",
+     "note": "",
+     "role": "水冷滑軌與折疊鉸鏈",
+     "sub_theme": null
+    },
+    {
+     "code": "3003",
+     "name": "健和興",
+     "note": "",
+     "role": "高壓電端子與車樁",
+     "sub_theme": null
+    },
+    {
+     "code": "6205",
+     "name": "詮欣",
+     "note": "",
+     "role": "伺服高頻連接線",
+     "sub_theme": null
+    },
+    {
+     "code": "3540",
+     "name": "曜越",
+     "note": "",
+     "role": "高瓦數機箱與電源",
+     "sub_theme": null
+    },
+    {
+     "code": "3689",
+     "name": "湧德",
+     "note": "",
+     "role": "高速濾波連接器",
+     "sub_theme": null
+    },
+    {
+     "code": "2457",
+     "name": "飛宏",
+     "note": "",
+     "role": "電動車充電椿電源",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_12",
+   "name": "被動元件 (MLCC/電感/電阻)",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2327",
+     "name": "國巨",
+     "note": "",
+     "role": "全球被動元件巨頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2492",
+     "name": "華新科",
+     "note": "",
+     "role": "綜合被動元件二哥",
+     "sub_theme": null
+    },
+    {
+     "code": "3026",
+     "name": "禾伸堂",
+     "note": "",
+     "role": "高壓MLCC與陶瓷材料",
+     "sub_theme": null
+    },
+    {
+     "code": "2428",
+     "name": "興勤",
+     "note": "",
+     "role": "壓敏熱敏保護元件",
+     "sub_theme": null
+    },
+    {
+     "code": "6173",
+     "name": "信昌電",
+     "note": "",
+     "role": "介電陶瓷粉末大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "2478",
+     "name": "大毅",
+     "note": "",
+     "role": "晶片電阻主力廠",
+     "sub_theme": null
+    },
+    {
+     "code": "2472",
+     "name": "立隆電",
+     "note": "",
+     "role": "車用鋁電解電容",
+     "sub_theme": null
+    },
+    {
+     "code": "2375",
+     "name": "凱美",
+     "note": "",
+     "role": "電解電容與風扇",
+     "sub_theme": null
+    },
+    {
+     "code": "3217",
+     "name": "優群",
+     "note": "",
+     "role": "記憶體DDR5插槽",
+     "sub_theme": null
+    },
+    {
+     "code": "8042",
+     "name": "金山電",
+     "note": "",
+     "role": "固態固液鋁電解電容",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_13",
+   "name": "網通設備與低軌衛星",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2345",
+     "name": "智邦",
+     "note": "",
+     "role": "800G白牌交換器龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6285",
+     "name": "啟碁",
+     "note": "",
+     "role": "低軌衛星地面端龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "5388",
+     "name": "中磊",
+     "note": "",
+     "role": "家用寬頻電信設備",
+     "sub_theme": null
+    },
+    {
+     "code": "3596",
+     "name": "智易",
+     "note": "",
+     "role": "5G FWA無線寬頻",
+     "sub_theme": null
+    },
+    {
+     "code": "3491",
+     "name": "昇達科",
+     "note": "",
+     "role": "低軌衛星毫米波雙工",
+     "sub_theme": null
+    },
+    {
+     "code": "3704",
+     "name": "合勤控",
+     "note": "",
+     "role": "電信網路與資安設備",
+     "sub_theme": null
+    },
+    {
+     "code": "2314",
+     "name": "台揚",
+     "note": "",
+     "role": "衛星降頻器LNB",
+     "sub_theme": null
+    },
+    {
+     "code": "2332",
+     "name": "友訊",
+     "note": "",
+     "role": "D-Link網通品牌商",
+     "sub_theme": null
+    },
+    {
+     "code": "6470",
+     "name": "宇智",
+     "note": "",
+     "role": "工控車載路由器",
+     "sub_theme": null
+    },
+    {
+     "code": "3669",
+     "name": "圓展",
+     "note": "",
+     "role": "視訊會議協同系統",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_14",
+   "name": "顯示器與光電鏡頭",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3008",
+     "name": "大立光",
+     "note": "",
+     "role": "高階手機鏡頭霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "3406",
+     "name": "玉晶光",
+     "note": "",
+     "role": "潛望鏡與VR光學二哥",
+     "sub_theme": null
+    },
+    {
+     "code": "8069",
+     "name": "元太",
+     "note": "",
+     "role": "電子紙專利壟斷龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2409",
+     "name": "友達",
+     "note": "",
+     "role": "車載智慧座艙面板",
+     "sub_theme": null
+    },
+    {
+     "code": "3481",
+     "name": "群創",
+     "note": "",
+     "role": "顯示面板跨FOPLP",
+     "sub_theme": null
+    },
+    {
+     "code": "3019",
+     "name": "亞光",
+     "note": "",
+     "role": "玻塑混合與車用鏡頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3504",
+     "name": "揚明光",
+     "note": "",
+     "role": "車載HUD光學鏡頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4976",
+     "name": "佳凌",
+     "note": "",
+     "role": "車載鏡頭與LiDAR鏡片",
+     "sub_theme": null
+    },
+    {
+     "code": "3673",
+     "name": "TPK-KY",
+     "note": "",
+     "role": "觸控模組與大尺寸",
+     "sub_theme": null
+    },
+    {
+     "code": "6116",
+     "name": "彩晶",
+     "note": "",
+     "role": "中小尺寸工控面板",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_15",
+   "name": "重電設備與電線電纜",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "1519",
+     "name": "華城",
+     "note": "",
+     "role": "特高壓變壓器外銷首選",
+     "sub_theme": null
+    },
+    {
+     "code": "1513",
+     "name": "中興電",
+     "note": "",
+     "role": "GIS開關獨占8成市占",
+     "sub_theme": null
+    },
+    {
+     "code": "1504",
+     "name": "東元",
+     "note": "",
+     "role": "工業馬達與變電統包",
+     "sub_theme": null
+    },
+    {
+     "code": "1503",
+     "name": "士電",
+     "note": "",
+     "role": "變壓器與日廠技術聯盟",
+     "sub_theme": null
+    },
+    {
+     "code": "1609",
+     "name": "大亞",
+     "note": "",
+     "role": "345kV超高壓線纜",
+     "sub_theme": null
+    },
+    {
+     "code": "1605",
+     "name": "華新",
+     "note": "",
+     "role": "電力線纜與特殊鋼",
+     "sub_theme": null
+    },
+    {
+     "code": "1514",
+     "name": "亞力",
+     "note": "",
+     "role": "台積電海外變壓器專案",
+     "sub_theme": null
+    },
+    {
+     "code": "1618",
+     "name": "合機",
+     "note": "",
+     "role": "台電超高壓電纜大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "1612",
+     "name": "宏泰",
+     "note": "",
+     "role": "交連PE絕緣電纜",
+     "sub_theme": null
+    },
+    {
+     "code": "1525",
+     "name": "江申",
+     "note": "",
+     "role": "重電配電箱機構件",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_16",
+   "name": "綠能與儲能環境",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "9958",
+     "name": "世紀鋼",
+     "note": "",
+     "role": "離岸風電水下基礎龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6869",
+     "name": "雲豹能源",
+     "note": "",
+     "role": "光儲水綠能整合平台",
+     "sub_theme": null
+    },
+    {
+     "code": "6443",
+     "name": "元晶",
+     "note": "",
+     "role": "太陽能高效電池模組",
+     "sub_theme": null
+    },
+    {
+     "code": "6477",
+     "name": "安集",
+     "note": "",
+     "role": "太陽能電廠自營維運",
+     "sub_theme": null
+    },
+    {
+     "code": "3708",
+     "name": "上緯投控",
+     "note": "",
+     "role": "循環可回收風電葉片樹脂",
+     "sub_theme": null
+    },
+    {
+     "code": "8926",
+     "name": "台汽電",
+     "note": "",
+     "role": "再生能源電廠運營商",
+     "sub_theme": null
+    },
+    {
+     "code": "8936",
+     "name": "國統",
+     "note": "",
+     "role": "水資源輸水與海淡工程",
+     "sub_theme": null
+    },
+    {
+     "code": "9904",
+     "name": "寶成",
+     "note": "",
+     "role": "跨足投資儲能案場",
+     "sub_theme": null
+    },
+    {
+     "code": "6582",
+     "name": "申豐",
+     "note": "",
+     "role": "水性環保合成乳膠",
+     "sub_theme": null
+    },
+    {
+     "code": "6781",
+     "name": "AES-KY",
+     "note": "",
+     "role": "儲能指標",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_17",
+   "name": "航運 - 貨櫃海運",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2603",
+     "name": "長榮",
+     "note": "",
+     "role": "全球前七大貨櫃船隊",
+     "sub_theme": null
+    },
+    {
+     "code": "2609",
+     "name": "陽明",
+     "note": "",
+     "role": "歐洲航線高比重官股",
+     "sub_theme": null
+    },
+    {
+     "code": "2615",
+     "name": "萬海",
+     "note": "",
+     "role": "亞洲近洋與美西航線",
+     "sub_theme": null
+    },
+    {
+     "code": "2636",
+     "name": "台驊投控",
+     "note": "",
+     "role": "海空陸物流貨運承攬",
+     "sub_theme": null
+    },
+    {
+     "code": "5609",
+     "name": "中菲行",
+     "note": "",
+     "role": "國際高科技空海承攬",
+     "sub_theme": null
+    },
+    {
+     "code": "2608",
+     "name": "大榮",
+     "note": "",
+     "role": "台灣常溫冷鏈物流首選",
+     "sub_theme": null
+    },
+    {
+     "code": "2607",
+     "name": "榮運",
+     "note": "",
+     "role": "港口碼頭場站經營",
+     "sub_theme": null
+    },
+    {
+     "code": "2642",
+     "name": "宅配通",
+     "note": "",
+     "role": "都會電商宅配服務",
+     "sub_theme": null
+    },
+    {
+     "code": "2612",
+     "name": "中航",
+     "note": "",
+     "role": "貨櫃內陸拖車與場站",
+     "sub_theme": null
+    },
+    {
+     "code": "5608",
+     "name": "四維航",
+     "note": "",
+     "role": "近洋多用途貨運船隊",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_18",
+   "name": "航運 - 散裝海運與航空",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2618",
+     "name": "長榮航",
+     "note": "",
+     "role": "高收益客貨運航空雙雄",
+     "sub_theme": null
+    },
+    {
+     "code": "2610",
+     "name": "華航",
+     "note": "",
+     "role": "貨機規模全台最大",
+     "sub_theme": null
+    },
+    {
+     "code": "2606",
+     "name": "裕民",
+     "note": "",
+     "role": "節能環保散裝船隊龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2637",
+     "name": "慧洋-KY",
+     "note": "",
+     "role": "中小型散裝船隊全球第一",
+     "sub_theme": null
+    },
+    {
+     "code": "2605",
+     "name": "新興",
+     "note": "",
+     "role": "海岬型鐵礦砂散裝船",
+     "sub_theme": null
+    },
+    {
+     "code": "2645",
+     "name": "長榮航太",
+     "note": "",
+     "role": "波音客改貨機體維修",
+     "sub_theme": null
+    },
+    {
+     "code": "6757",
+     "name": "台灣虎航",
+     "note": "",
+     "role": "低成本東北亞航線王",
+     "sub_theme": null
+    },
+    {
+     "code": "2617",
+     "name": "台航",
+     "note": "",
+     "role": "官股散裝與港勤拖船",
+     "sub_theme": null
+    },
+    {
+     "code": "2630",
+     "name": "亞航",
+     "note": "",
+     "role": "軍機民機改裝維修",
+     "sub_theme": null
+    },
+    {
+     "code": "5604",
+     "name": "中連貨",
+     "note": "",
+     "role": "物流地產出租轉型",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_19",
+   "name": "軍工航太與無人機",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2634",
+     "name": "漢翔",
+     "note": "",
+     "role": "高教機量產軍工龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "8033",
+     "name": "雷虎",
+     "note": "",
+     "role": "國防部商規無人機主導",
+     "sub_theme": null
+    },
+    {
+     "code": "4572",
+     "name": "駐龍",
+     "note": "",
+     "role": "波音機身結構精密件",
+     "sub_theme": null
+    },
+    {
+     "code": "5284",
+     "name": "jpp-KY",
+     "note": "",
+     "role": "空巴航電機殼機構件",
+     "sub_theme": null
+    },
+    {
+     "code": "8222",
+     "name": "寶一",
+     "note": "",
+     "role": "引擎燃燒室高溫件",
+     "sub_theme": null
+    },
+    {
+     "code": "4541",
+     "name": "晟田",
+     "note": "",
+     "role": "起落架與發動機匣加工",
+     "sub_theme": null
+    },
+    {
+     "code": "3005",
+     "name": "神基",
+     "note": "",
+     "role": "軍用強固型筆電大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "2645",
+     "name": "長榮航太",
+     "note": "",
+     "role": "發動機維修檢測服務",
+     "sub_theme": null
+    },
+    {
+     "code": "3029",
+     "name": "零壹",
+     "note": "",
+     "role": "國防等級資安整合",
+     "sub_theme": null
+    },
+    {
+     "code": "2630",
+     "name": "亞航",
+     "note": "",
+     "role": "國軍旋翼機維修廠",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_20",
+   "name": "營建推案與資產活化",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2520",
+     "name": "冠德",
+     "note": "",
+     "role": "捷運共構聯開案龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2501",
+     "name": "國建",
+     "note": "",
+     "role": "國泰集團老牌推案龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2542",
+     "name": "興富發",
+     "note": "",
+     "role": "首購住宅推案巨量霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2548",
+     "name": "華固",
+     "note": "",
+     "role": "北市精華區都更商辦",
+     "sub_theme": null
+    },
+    {
+     "code": "5534",
+     "name": "長虹",
+     "note": "",
+     "role": "科技廠辦園區推案領先",
+     "sub_theme": null
+    },
+    {
+     "code": "2515",
+     "name": "中工",
+     "note": "",
+     "role": "陶朱隱園與公共工程",
+     "sub_theme": null
+    },
+    {
+     "code": "1402",
+     "name": "遠東新",
+     "note": "",
+     "role": "遠東集團全台老廠活化",
+     "sub_theme": null
+    },
+    {
+     "code": "2903",
+     "name": "遠百",
+     "note": "",
+     "role": "精華區百貨地產重估利益",
+     "sub_theme": null
+    },
+    {
+     "code": "2534",
+     "name": "宏盛",
+     "note": "",
+     "role": "豪宅建商品牌都更推案",
+     "sub_theme": null
+    },
+    {
+     "code": "2105",
+     "name": "正新",
+     "note": "",
+     "role": "彰化等地龐大舊廠資產",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_21",
+   "name": "智慧機械與機器人",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2049",
+     "name": "上銀",
+     "note": "",
+     "role": "滾珠螺桿線性滑軌龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4576",
+     "name": "大銀微系統",
+     "note": "",
+     "role": "直驅力矩馬達與奈米平台",
+     "sub_theme": null
+    },
+    {
+     "code": "2359",
+     "name": "所羅門",
+     "note": "",
+     "role": "AI 3D機器人視覺演算法",
+     "sub_theme": null
+    },
+    {
+     "code": "4583",
+     "name": "台灣精銳",
+     "note": "",
+     "role": "機器人行星減速機大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "1590",
+     "name": "亞德客-KY",
+     "note": "",
+     "role": "全球氣動元件巨頭",
+     "sub_theme": null
+    },
+    {
+     "code": "8374",
+     "name": "羅昇",
+     "note": "",
+     "role": "智慧工廠機電傳動整合",
+     "sub_theme": null
+    },
+    {
+     "code": "6188",
+     "name": "廣運",
+     "note": "",
+     "role": "倉儲AGV無人搬運系統",
+     "sub_theme": null
+    },
+    {
+     "code": "1504",
+     "name": "東元",
+     "note": "",
+     "role": "工業伺服關節馬達",
+     "sub_theme": null
+    },
+    {
+     "code": "4540",
+     "name": "全球傳動",
+     "note": "",
+     "role": "滾珠花鍵單軸機器人",
+     "sub_theme": null
+    },
+    {
+     "code": "4562",
+     "name": "穎漢",
+     "note": "",
+     "role": "CNC全電彎管工作站",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_22",
+   "name": "汽車零組件與 AM 市場",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "1319",
+     "name": "東陽",
+     "note": "",
+     "role": "AM塑膠保險桿全球霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "6605",
+     "name": "帝寶",
+     "note": "",
+     "role": "AM/OEM車燈製造巨頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1522",
+     "name": "堤維西",
+     "note": "",
+     "role": "美國CAPA認證車燈大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "2207",
+     "name": "和泰車",
+     "note": "",
+     "role": "豐田總代理台灣銷量王",
+     "sub_theme": null
+    },
+    {
+     "code": "2201",
+     "name": "裕隆",
+     "note": "",
+     "role": "納智捷電動車製造基地",
+     "sub_theme": null
+    },
+    {
+     "code": "1536",
+     "name": "和大",
+     "note": "",
+     "role": "特斯拉減速齒輪箱供應商",
+     "sub_theme": null
+    },
+    {
+     "code": "6279",
+     "name": "胡連",
+     "note": "",
+     "role": "車用高頻高壓連接器",
+     "sub_theme": null
+    },
+    {
+     "code": "3552",
+     "name": "同致",
+     "note": "",
+     "role": "ADAS倒車雷達前三強",
+     "sub_theme": null
+    },
+    {
+     "code": "4551",
+     "name": "智伸科",
+     "note": "",
+     "role": "缸內直噴變速箱精密件",
+     "sub_theme": null
+    },
+    {
+     "code": "9941",
+     "name": "裕融",
+     "note": "",
+     "role": "車用融資租賃金流",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_23",
+   "name": "鋼鐵與金屬原物料",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2002",
+     "name": "中鋼",
+     "note": "",
+     "role": "台灣高爐碳鋼龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2014",
+     "name": "中鴻",
+     "note": "",
+     "role": "熱軋冷軋鋼捲定價指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2006",
+     "name": "東和鋼鐵",
+     "note": "",
+     "role": "建築電爐H型鋼霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2015",
+     "name": "豐興",
+     "note": "",
+     "role": "廢鋼與鋼筋開盤指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2027",
+     "name": "大成鋼",
+     "note": "",
+     "role": "美國不鏽鋼鋁捲通路首選",
+     "sub_theme": null
+    },
+    {
+     "code": "5009",
+     "name": "榮剛",
+     "note": "",
+     "role": "航太國防特殊合金鋼",
+     "sub_theme": null
+    },
+    {
+     "code": "2030",
+     "name": "彰源",
+     "note": "",
+     "role": "工業流體不鏽鋼管",
+     "sub_theme": null
+    },
+    {
+     "code": "2034",
+     "name": "允強",
+     "note": "",
+     "role": "全球不鏽鋼管加工前三",
+     "sub_theme": null
+    },
+    {
+     "code": "2009",
+     "name": "第一銅",
+     "note": "",
+     "role": "銅片製造高度連動國際銅價",
+     "sub_theme": null
+    },
+    {
+     "code": "2028",
+     "name": "大成不銹鋼",
+     "note": "",
+     "role": "特殊緊固扣件",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_24",
+   "name": "塑化與橡膠輪胎",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "1301",
+     "name": "台塑",
+     "note": "",
+     "role": "PVC樹脂與燒鹼巨頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1303",
+     "name": "南亞",
+     "note": "",
+     "role": "塑膠加工與電子級玻纖布",
+     "sub_theme": null
+    },
+    {
+     "code": "1326",
+     "name": "台化",
+     "note": "",
+     "role": "PTA與ABS芳香烴主力",
+     "sub_theme": null
+    },
+    {
+     "code": "6505",
+     "name": "台塑化",
+     "note": "",
+     "role": "輕油裂解成品油煉製",
+     "sub_theme": null
+    },
+    {
+     "code": "1304",
+     "name": "台聚",
+     "note": "",
+     "role": "太陽能EVA膠膜原料",
+     "sub_theme": null
+    },
+    {
+     "code": "1308",
+     "name": "亞聚",
+     "note": "",
+     "role": "高階塗覆級EVA原料",
+     "sub_theme": null
+    },
+    {
+     "code": "2105",
+     "name": "正新",
+     "note": "",
+     "role": "瑪吉斯輪胎全球前十",
+     "sub_theme": null
+    },
+    {
+     "code": "2106",
+     "name": "建大",
+     "note": "",
+     "role": "兩輪胎龍頭與乘用車胎",
+     "sub_theme": null
+    },
+    {
+     "code": "1312",
+     "name": "國喬",
+     "note": "",
+     "role": "苯乙烯SM與ABS樹脂",
+     "sub_theme": null
+    },
+    {
+     "code": "1314",
+     "name": "中石化",
+     "note": "",
+     "role": "CPL與AN台灣唯一製造",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_25",
+   "name": "食品與內需民生",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "1216",
+     "name": "統一",
+     "note": "",
+     "role": "食品與超商通路總龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2912",
+     "name": "統一超",
+     "note": "",
+     "role": "7-ELEVEN全台超商霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "1210",
+     "name": "大成",
+     "note": "",
+     "role": "肉雞與禽畜飼料龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1215",
+     "name": "卜蜂",
+     "note": "",
+     "role": "白肉雞與禽肉深加工",
+     "sub_theme": null
+    },
+    {
+     "code": "1227",
+     "name": "佳格",
+     "note": "",
+     "role": "桂格燕麥與料理食用油",
+     "sub_theme": null
+    },
+    {
+     "code": "1232",
+     "name": "大統益",
+     "note": "",
+     "role": "大豆沙拉油壓榨龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1702",
+     "name": "南僑",
+     "note": "",
+     "role": "烘焙油脂與急凍熟麵",
+     "sub_theme": null
+    },
+    {
+     "code": "1201",
+     "name": "味全",
+     "note": "",
+     "role": "鮮乳飲品與調味醬品",
+     "sub_theme": null
+    },
+    {
+     "code": "1218",
+     "name": "泰山",
+     "note": "",
+     "role": "八寶粥與包裝飲品",
+     "sub_theme": null
+    },
+    {
+     "code": "1234",
+     "name": "黑松",
+     "note": "",
+     "role": "碳酸飲料與酒類代理",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_26",
+   "name": "觀光、餐飲與飯店",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2727",
+     "name": "王品",
+     "note": "",
+     "role": "多品牌連鎖餐飲霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2753",
+     "name": "八方雲集",
+     "note": "",
+     "role": "鍋貼小吃加盟拓美龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2707",
+     "name": "晶華",
+     "note": "",
+     "role": "五星級飯店獲利指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2731",
+     "name": "雄獅",
+     "note": "",
+     "role": "台灣出境旅行社龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "5706",
+     "name": "鳳凰",
+     "note": "",
+     "role": "歐美長程旅遊出團指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2723",
+     "name": "美食-KY",
+     "note": "",
+     "role": "85度C深耕美國西岸",
+     "sub_theme": null
+    },
+    {
+     "code": "2704",
+     "name": "國賓",
+     "note": "",
+     "role": "頂級資產豪宅改建開發",
+     "sub_theme": null
+    },
+    {
+     "code": "2748",
+     "name": "雲品",
+     "note": "",
+     "role": "頂級度假溫泉與婚宴會館",
+     "sub_theme": null
+    },
+    {
+     "code": "2755",
+     "name": "揚秦",
+     "note": "",
+     "role": "麥味登早午餐加盟體系",
+     "sub_theme": null
+    },
+    {
+     "code": "2732",
+     "name": "六角",
+     "note": "",
+     "role": "日出茶太全球手搖飲連鎖",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_27",
+   "name": "生技新藥與臨床研發",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "6446",
+     "name": "藥華藥",
+     "note": "",
+     "role": "罕見血癌新藥全球銷售",
+     "sub_theme": null
+    },
+    {
+     "code": "1795",
+     "name": "美時",
+     "note": "",
+     "role": "戒毒與抗血癌困難學名藥",
+     "sub_theme": null
+    },
+    {
+     "code": "4162",
+     "name": "智擎",
+     "note": "",
+     "role": "胰臟癌授權新藥權利金",
+     "sub_theme": null
+    },
+    {
+     "code": "6550",
+     "name": "北極星藥業-KY",
+     "note": "",
+     "role": "肺間皮癌標靶代謝臨床",
+     "sub_theme": null
+    },
+    {
+     "code": "4743",
+     "name": "合一",
+     "note": "",
+     "role": "糖尿病足潰瘍外用新藥",
+     "sub_theme": null
+    },
+    {
+     "code": "4128",
+     "name": "中天",
+     "note": "",
+     "role": "免疫調節新藥集團研發",
+     "sub_theme": null
+    },
+    {
+     "code": "6589",
+     "name": "台康生技",
+     "note": "",
+     "role": "乳癌生物相似藥授權",
+     "sub_theme": null
+    },
+    {
+     "code": "4174",
+     "name": "浩鼎",
+     "note": "",
+     "role": "癌症抗體藥複合體ADC",
+     "sub_theme": null
+    },
+    {
+     "code": "6732",
+     "name": "昇佳電子",
+     "note": "",
+     "role": "醫療感測穿戴晶片",
+     "sub_theme": null
+    },
+    {
+     "code": "1762",
+     "name": "中化",
+     "note": "",
+     "role": "綜合製藥外銷學名藥",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_28",
+   "name": "生技醫療 - 醫材與 CDMO",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "6472",
+     "name": "保瑞",
+     "note": "",
+     "role": "國際購併CDMO代工龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4736",
+     "name": "泰博",
+     "note": "",
+     "role": "血糖監測醫材出貨第一",
+     "sub_theme": null
+    },
+    {
+     "code": "6782",
+     "name": "視陽",
+     "note": "",
+     "role": "亞洲第一大矽水膠隱眼",
+     "sub_theme": null
+    },
+    {
+     "code": "6491",
+     "name": "晶碩",
+     "note": "",
+     "role": "彩色隱形眼鏡代工龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1760",
+     "name": "寶齡富錦",
+     "note": "",
+     "role": "腎病拿百磷原廠藥獲利",
+     "sub_theme": null
+    },
+    {
+     "code": "4104",
+     "name": "佳醫",
+     "note": "",
+     "role": "血液透析洗腎耗材通路",
+     "sub_theme": null
+    },
+    {
+     "code": "1565",
+     "name": "精華",
+     "note": "",
+     "role": "隱形眼鏡外銷老牌代工",
+     "sub_theme": null
+    },
+    {
+     "code": "4119",
+     "name": "旭富",
+     "note": "",
+     "role": "癲癇與中間體原料藥大廠",
+     "sub_theme": null
+    },
+    {
+     "code": "4105",
+     "name": "東洋",
+     "note": "",
+     "role": "微脂體困難注射劑代工",
+     "sub_theme": null
+    },
+    {
+     "code": "1786",
+     "name": "科妍",
+     "note": "",
+     "role": "透明質酸關節注射劑",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_29",
+   "name": "金控 - 壽險與證券型",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2881",
+     "name": "富邦金",
+     "note": "",
+     "role": "連年獲利蟬聯金控冠軍",
+     "sub_theme": null
+    },
+    {
+     "code": "2882",
+     "name": "國泰金",
+     "note": "",
+     "role": "全球龐大債券股權資產",
+     "sub_theme": null
+    },
+    {
+     "code": "2885",
+     "name": "元大金",
+     "note": "",
+     "role": "證券經紀與ETF發行霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "2891",
+     "name": "中信金",
+     "note": "",
+     "role": "台灣最大消金財管金控",
+     "sub_theme": null
+    },
+    {
+     "code": "2883",
+     "name": "開發金",
+     "note": "",
+     "role": "凱基證券與壽險反彈主軸",
+     "sub_theme": null
+    },
+    {
+     "code": "2884",
+     "name": "玉山金",
+     "note": "",
+     "role": "財富管理優質民營金控",
+     "sub_theme": null
+    },
+    {
+     "code": "2890",
+     "name": "永豐金",
+     "note": "",
+     "role": "數位理財證券獲客領先",
+     "sub_theme": null
+    },
+    {
+     "code": "5880",
+     "name": "合庫金",
+     "note": "",
+     "role": "土建融與農漁金融主力",
+     "sub_theme": null
+    },
+    {
+     "code": "6005",
+     "name": "群益證",
+     "note": "",
+     "role": "獨立綜合券商市占前段",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_30",
+   "name": "金控/銀行 - 利差型",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2886",
+     "name": "兆豐金",
+     "note": "",
+     "role": "外幣清算與企金放款龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2892",
+     "name": "第一金",
+     "note": "",
+     "role": "中小企業企金放款主力",
+     "sub_theme": null
+    },
+    {
+     "code": "2880",
+     "name": "華南金",
+     "note": "",
+     "role": "官股聯貸與都更放款主力",
+     "sub_theme": null
+    },
+    {
+     "code": "2887",
+     "name": "台新金",
+     "note": "",
+     "role": "數位帳戶霸主與信用卡消金",
+     "sub_theme": null
+    },
+    {
+     "code": "5876",
+     "name": "上海商銀",
+     "note": "",
+     "role": "外幣利差與兩岸企金利基",
+     "sub_theme": null
+    },
+    {
+     "code": "2834",
+     "name": "臺企銀",
+     "note": "",
+     "role": "中小企業專案信貸融資",
+     "sub_theme": null
+    },
+    {
+     "code": "2812",
+     "name": "台中銀",
+     "note": "",
+     "role": "中部深耕企金與土建融",
+     "sub_theme": null
+    },
+    {
+     "code": "2838",
+     "name": "聯邦銀",
+     "note": "",
+     "role": "消金車貸與微型信貸",
+     "sub_theme": null
+    },
+    {
+     "code": "2845",
+     "name": "遠東銀",
+     "note": "",
+     "role": "遠東集團海外聯貸主力",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_31",
+   "name": "資訊軟體與雲端資安",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "6214",
+     "name": "精誠",
+     "note": "",
+     "role": "台灣系統整合SI龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3029",
+     "name": "零壹",
+     "note": "",
+     "role": "企業資安網路代理龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2471",
+     "name": "資通",
+     "note": "",
+     "role": "銀行SWIFT結算系統整合",
+     "sub_theme": null
+    },
+    {
+     "code": "6183",
+     "name": "關貿",
+     "note": "",
+     "role": "關稅通關與電子發票核心",
+     "sub_theme": null
+    },
+    {
+     "code": "6112",
+     "name": "邁達特",
+     "note": "",
+     "role": "微軟Cisco雲端託管服務",
+     "sub_theme": null
+    },
+    {
+     "code": "2453",
+     "name": "凌群",
+     "note": "",
+     "role": "金融警政交易地端AI系統",
+     "sub_theme": null
+    },
+    {
+     "code": "5203",
+     "name": "訊連",
+     "note": "",
+     "role": "影音多媒體與FaceMe人臉",
+     "sub_theme": null
+    },
+    {
+     "code": "4953",
+     "name": "緯軟",
+     "note": "",
+     "role": "跨國百大企業IT人才委外",
+     "sub_theme": null
+    },
+    {
+     "code": "5478",
+     "name": "智冠",
+     "note": "",
+     "role": "遊戲金流與數位行銷服務",
+     "sub_theme": null
+    },
+    {
+     "code": "6695",
+     "name": "芯鼎",
+     "note": "",
+     "role": "邊緣AI影像辨識晶片",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_32",
+   "name": "高股息藍籌（跨產業特性）",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2412",
+     "name": "中華電",
+     "note": "",
+     "role": "現金流充沛防禦金雞母",
+     "sub_theme": null
+    },
+    {
+     "code": "3045",
+     "name": "台灣大",
+     "note": "",
+     "role": "電信收益股息發放率近百分百",
+     "sub_theme": null
+    },
+    {
+     "code": "4904",
+     "name": "遠傳",
+     "note": "",
+     "role": "電信整合綜效發酵",
+     "sub_theme": null
+    },
+    {
+     "code": "2357",
+     "name": "華碩",
+     "note": "",
+     "role": "藍籌品牌固定提撥高額股息",
+     "sub_theme": null
+    },
+    {
+     "code": "2347",
+     "name": "聯強",
+     "note": "",
+     "role": "高科技通路龍頭配息穩定",
+     "sub_theme": null
+    },
+    {
+     "code": "3702",
+     "name": "大聯大",
+     "note": "",
+     "role": "全球半導體通路配息優異",
+     "sub_theme": null
+    },
+    {
+     "code": "2385",
+     "name": "群光",
+     "note": "",
+     "role": "鍵盤電源高ROE配息標兵",
+     "sub_theme": null
+    },
+    {
+     "code": "2441",
+     "name": "超豐",
+     "note": "",
+     "role": "成熟導線架封測穩定發息",
+     "sub_theme": null
+    },
+    {
+     "code": "2303",
+     "name": "聯電",
+     "note": "",
+     "role": "折舊提列尾聲現金殖利率高",
+     "sub_theme": null
+    },
+    {
+     "code": "2886",
+     "name": "兆豐金",
+     "note": "",
+     "role": "官股高息與抗通膨首選",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_33",
+   "name": "功率半導體與元件",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "5425",
+     "name": "台半",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "8255",
+     "name": "朋程",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2481",
+     "name": "強茂",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "6435",
+     "name": "大中",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "3317",
+     "name": "尼克森",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "8261",
+     "name": "富鼎",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "6201",
+     "name": "亞弘電",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3707",
+     "name": "漢磊",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6182",
+     "name": "合晶",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6488",
+     "name": "環球晶",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3016",
+     "name": "嘉晶",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "2342",
+     "name": "茂矽",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_34",
+   "name": "HVDC 高壓直流供電",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2308",
+     "name": "台達電",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2301",
+     "name": "光寶科",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "2457",
+     "name": "飛宏",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "4939",
+     "name": "康舒",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3015",
+     "name": "全漢",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3078",
+     "name": "僑威",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "6415",
+     "name": "矽力-KY",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6266",
+     "name": "泰詠",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "3665",
+     "name": "貿聯-KY",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "3526",
+     "name": "凡甲",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_35",
+   "name": "半導體設備",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3131",
+     "name": "弘塑",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3413",
+     "name": "京鼎",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3583",
+     "name": "辛耘",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3680",
+     "name": "家登",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "5443",
+     "name": "均豪",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "2464",
+     "name": "盟立",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "6196",
+     "name": "帆宣",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "5536",
+     "name": "聖暉*",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2404",
+     "name": "漢唐",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6139",
+     "name": "亞翔",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3587",
+     "name": "閎康",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_36",
+   "name": "檢測設備",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "3587",
+     "name": "閎康",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3289",
+     "name": "宜特",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6830",
+     "name": "汎銓",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2360",
+     "name": "致茂",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "6510",
+     "name": "精測",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6223",
+     "name": "旺矽",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6515",
+     "name": "穎崴",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "6683",
+     "name": "雍智科技",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "2449",
+     "name": "京元電",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "6257",
+     "name": "矽格",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_37",
+   "name": "特用化學",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "4772",
+     "name": "台特化",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "4755",
+     "name": "三福化",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "1773",
+     "name": "勝一",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "4763",
+     "name": "材料-KY",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "4749",
+     "name": "新應材",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "5234",
+     "name": "達興材料",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "4768",
+     "name": "晶呈科技",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "1727",
+     "name": "中華化",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "1711",
+     "name": "永光",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "1717",
+     "name": "長興",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "4766",
+     "name": "南寶",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_38",
+   "name": "CoPoS 與玻璃基板",
+   "source_sheet": "38族群代表股",
+   "stocks": [
+    {
+     "code": "2330",
+     "name": "台積電",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3680",
+     "name": "家登",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6640",
+     "name": "均華",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "7734",
+     "name": "印能科技",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    },
+    {
+     "code": "2467",
+     "name": "志聖",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "6187",
+     "name": "萬潤",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3167",
+     "name": "大量",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "3131",
+     "name": "弘塑",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "3583",
+     "name": "辛耘",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "2464",
+     "name": "盟立",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3711",
+     "name": "日月光投控",
+     "note": "",
+     "role": "核心龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "6239",
+     "name": "力成",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "3535",
+     "name": "晶彩科",
+     "note": "",
+     "role": "上游關鍵",
+     "sub_theme": null
+    },
+    {
+     "code": "3481",
+     "name": "群創",
+     "note": "",
+     "role": "法人活水",
+     "sub_theme": null
+    },
+    {
+     "code": "1802",
+     "name": "台玻",
+     "note": "",
+     "role": "純度指標",
+     "sub_theme": null
+    }
+   ]
+  }
+ ]
+}
