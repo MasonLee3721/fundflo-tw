@@ -39,6 +39,7 @@ td.pos{color:#c0392b;font-weight:600}
 td.neg{color:#1e8449;font-weight:600}
 a.tk{color:#1a56db;text-decoration:none;border-bottom:1px dotted #1a56db}
 a.tk:hover{color:#c0392b;border-bottom-style:solid}
+a.tk::after{content:" ↗";font-size:.72em;color:#888}
 ul{margin:6px 0;padding-left:1.4em;font-size:.88rem}
 li{margin:4px 0}
 p{font-size:.9rem}
