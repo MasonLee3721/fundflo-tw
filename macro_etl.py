@@ -6,11 +6,12 @@ Sources (all public, verified reachable from this VM):
   - US 10Y / 2Y Treasury yields: FRED fredgraph.csv?id=DGS10 / DGS2 (no key)
   - 10Y term premium (ACM): NY Fed ACMTermPremium.xls, sheet 'ACM Daily', col ACMTP10
   - TWD/USD: Yahoo Finance USDTWD=X (FRED DEXTAIW and BOT are bot-blocked from here)
+  - USD Dollar Index (DXY): Yahoo Finance DX-Y.NYB
 
 All series are T+1 by nature (US close / next-day publish). The overview report
 labels every value with its actual data date; nothing is presented as "today".
 
-Table: macro_daily(date TEXT PRIMARY KEY, dgs10 REAL, dgs2 REAL, acm_tp10 REAL, twd REAL)
+Table: macro_daily(date TEXT PRIMARY KEY, dgs10 REAL, dgs2 REAL, acm_tp10 REAL, twd REAL, usdx REAL)
 Dates stored as YYYYMMDD.
 
 Usage:
@@ -131,7 +132,11 @@ def yahoo_twd():
 def run():
     con = sqlite3.connect(DB)
     con.execute('''CREATE TABLE IF NOT EXISTS macro_daily(
-      date TEXT PRIMARY KEY, dgs10 REAL, dgs2 REAL, acm_tp10 REAL, twd REAL)''')
+      date TEXT PRIMARY KEY, dgs10 REAL, dgs2 REAL, acm_tp10 REAL, twd REAL, usdx REAL)''')
+    # 舊表沒有 usdx 欄就補上
+    cols = [r[1] for r in con.execute('PRAGMA table_info(macro_daily)')]
+    if 'usdx' not in cols:
+        con.execute('ALTER TABLE macro_daily ADD COLUMN usdx REAL')
     print('fetching DGS10 (FRED)...', flush=True); d10 = fred_series('DGS10')
     print('fetching DGS2 (FRED)...', flush=True); d2 = fred_series('DGS2')
     if not d10:
@@ -140,14 +145,16 @@ def run():
         print(f'  ^TNX fallback rows: {len(d10)}', flush=True)
     print('fetching ACM TP10 (NY Fed)...', flush=True); tp = acm_tp10()
     print('fetching USDTWD (Yahoo)...', flush=True); fx = yahoo_twd()
-    print(f'  got: DGS10={len(d10)} DGS2={len(d2)} ACM={len(tp)} TWD={len(fx)}', flush=True)
-    all_dates = set(d10) | set(d2) | set(tp) | set(fx)
+    print('fetching USDX (Yahoo DX-Y.NYB)...', flush=True); dx = yahoo_series('DX-Y.NYB', '2y')
+    print(f'  got: DGS10={len(d10)} DGS2={len(d2)} ACM={len(tp)} TWD={len(fx)} USDX={len(dx)}', flush=True)
+    all_dates = set(d10) | set(d2) | set(tp) | set(fx) | set(dx)
     n = 0
     for dt in sorted(all_dates):
-        cur = con.execute('SELECT dgs10,dgs2,acm_tp10,twd FROM macro_daily WHERE date=?', (dt,)).fetchone()
-        old = cur if cur else (None, None, None, None)
-        vals = (d10.get(dt, old[0]), d2.get(dt, old[1]), tp.get(dt, old[2]), fx.get(dt, old[3]))
-        con.execute('INSERT OR REPLACE INTO macro_daily VALUES (?,?,?,?,?)', (dt,) + vals)
+        cur = con.execute('SELECT dgs10,dgs2,acm_tp10,twd,usdx FROM macro_daily WHERE date=?', (dt,)).fetchone()
+        old = cur if cur else (None, None, None, None, None)
+        vals = (d10.get(dt, old[0]), d2.get(dt, old[1]), tp.get(dt, old[2]), fx.get(dt, old[3]),
+                dx.get(dt, old[4]))
+        con.execute('INSERT OR REPLACE INTO macro_daily VALUES (?,?,?,?,?,?)', (dt,) + vals)
         n += 1
     con.commit()
     r = con.execute('SELECT MIN(date),MAX(date),COUNT(*) FROM macro_daily').fetchone()
