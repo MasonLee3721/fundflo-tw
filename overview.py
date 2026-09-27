@@ -153,6 +153,13 @@ def market_section(c, D):
     L.append(f'| 自營淨額 | {R.fa(mkt["d_net"])} 億 | {"偏買" if mkt["d_net"] > 0 else "偏賣"} |')
     L.append(f'| 總成交｜漲家｜跌家 | {mkt["total_turnover"]:,.2f} 億｜{mkt["up_count"]}｜{mkt["down_count"]} | '
              f'{"跌多漲少" if mkt["down_count"] > mkt["up_count"] else "漲多跌少"} |')
+    up, down = mkt.get('up_count'), mkt.get('down_count')
+    if up and down:
+        ratio = up / down
+        L.append(f'| [市場寬度](https://www.wantgoo.com/stock/market-breadth-index) | '
+                 f'上漲 {up} 家｜下跌 {down} 家，漲跌比 {ratio:.2f} | '
+                 f'{"漲多跌少" if up > down else "跌多漲少"}；'
+                 f'均線寬度（20/60/240日，85%過熱／15%超賣）看連結圖 |')
     if fin_chg is not None:
         L.append(f'| 融資餘額變化（上市＋上櫃） | {fin_chg:+.1f} 萬張（{fin_pct:+.2f}%） | '
                  f'{"槓桿升溫" if fin_chg > 0 else "槓桿降溫"} |')
