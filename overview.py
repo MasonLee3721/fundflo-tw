@@ -160,6 +160,28 @@ def market_section(c, D):
                  f'上漲 {up} 家｜下跌 {down} 家，漲跌比 {ratio:.2f} | '
                  f'{"漲多跌少" if up > down else "跌多漲少"}；'
                  f'均線寬度（20/60/240日，85%過熱／15%超賣）看連結圖 |')
+    # ADL 騰落線：Σ(上漲−下跌)，只看方向與轉折，不看絕對值
+    adl_rows = c.execute(
+        'SELECT date, up_count, down_count FROM market_daily '
+        'WHERE up_count IS NOT NULL AND down_count IS NOT NULL AND date <= ? '
+        'ORDER BY date', (D,)).fetchall()
+    if adl_rows:
+        nets = [(d, u - dn) for d, u, dn in adl_rows]
+        adl = sum(n for _, n in nets)
+        chg5 = sum(n for _, n in nets[-5:])
+        streak, sign = 0, None
+        for _, n in reversed(nets):
+            s = 1 if n > 0 else -1 if n < 0 else 0
+            if sign is None:
+                sign, streak = s, 1
+            elif s == sign and s != 0:
+                streak += 1
+            else:
+                break
+        trend = f'連{"升" if sign > 0 else "跌"}{streak}日' if sign else '持平'
+        L.append(f'| [騰落線 ADL](https://www.wantgoo.com/stock/market-breadth-index) | '
+                 f'{len(nets)}日累計 {adl:+,}，近5日 {chg5:+,}（{trend}） | '
+                 f'看方向不看絕對值；與指數背離時留意 |')
     if fin_chg is not None:
         L.append(f'| 融資餘額變化（上市＋上櫃） | {fin_chg:+.1f} 萬張（{fin_pct:+.2f}%） | '
                  f'{"槓桿升溫" if fin_chg > 0 else "槓桿降溫"} |')
