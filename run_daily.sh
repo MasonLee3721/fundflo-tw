@@ -17,6 +17,8 @@ sys.exit(0 if is_trading_day('$TODAY') else 1)"; then
 fi
 D=$(/usr/bin/python3 etl.py --latest 2>&1 | grep -oP 'latest trading day: \K\d+')
 /usr/bin/python3 macro_etl.py --latest
+/usr/bin/python3 struct_etl.py --backfill --days 5
+/usr/bin/python3 breadth_etl.py --update
 mkdir -p reports/$D
 /usr/bin/python3 overview.py --date $D --out reports/$D/OVERVIEW.html
 for s in $(/usr/bin/python3 overview.py --date $D --signals); do
