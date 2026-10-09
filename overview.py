@@ -28,6 +28,47 @@ CFG = {
 
 LEAD_ROLES = {'龍頭霸主', '核心龍頭'}
 
+
+def _spark(vals):
+    """文字 sparkline（近 N 日走勢），相對 min-max 縮放，看膨脹/收縮形狀。"""
+    blocks = '▁▂▃▄▅▆▇█'
+    vals = [v for v in vals if v is not None]
+    if not vals:
+        return '—'
+    mn, mx = min(vals), max(vals)
+    if mx - mn < 1e-9:
+        return blocks[0] * len(vals)
+    return ''.join(blocks[min(7, int((v - mn) / (mx - mn) * 8))] for v in vals)
+
+
+def _breadth_rows(c):
+    """台股廣度：站上季線(60MA)/年線(200MA)比例＋近5日變化＋近20日走勢。"""
+    L = []
+    try:
+        rows = c.execute('SELECT date, pct60, pct200 FROM market_breadth ORDER BY date DESC LIMIT 21'
+                         ).fetchall()
+    except Exception:
+        rows = []
+    if not rows:
+        L.append('| 廣度｜季線/年線 | 資料建置中 | — |')
+        return L
+    rows = list(reversed(rows))
+    bd = rows[-1][0]
+    p60 = [r[1] for r in rows]
+    p200 = [r[2] for r in rows]
+    d5_60 = p60[-1] - p60[-6] if len(p60) >= 6 else None
+    d5_200 = p200[-1] - p200[-6] if len(p200) >= 6 else None
+    sp60 = _spark(p60[-20:])
+    sp200 = _spark(p200[-20:])
+    d5t = lambda d: f'{d:+.1f}pct' if d is not None else '—'
+    dir60 = '膨脹' if (d5_60 or 0) > 0 else '收縮'
+    dir200 = '膨脹' if (d5_200 or 0) > 0 else '收縮'
+    L.append(f'| 廣度｜季線(60MA) | {p60[-1]:.1f}% 站上季線（{bd}）｜近5日 {d5t(d5_60)}｜近20日 {sp60} | '
+             f'{dir60}＝廣度{"改善（多頭擴散）" if dir60 == "膨脹" else "轉弱（僅靠權值撐）"} |')
+    L.append(f'| 廣度｜年線(200MA) | {p200[-1]:.1f}% 站上年線（{bd}）｜近5日 {d5t(d5_200)}｜近20日 {sp200} | '
+             f'{dir200}＝廣度{"改善（多頭擴散）" if dir200 == "膨脹" else "轉弱（僅靠權值撐）"} |')
+    return L
+
 TRANSMISSION = (
     '傳導邏輯：美債 10Y 殖利率上行 → 美元走強、資金回流美國 → 外資賣超台股、台幣走貶；'
     '台幣貶值又墊高外資匯兌成本，使其更不願匯入，形成同一方向的循環。'
@@ -90,10 +131,23 @@ def macro_section(c, D):
     if vdx is not None and len(sdx) >= 2:
         chg = sdx[-1][1] - sdx[-2][1]
         dx_txt = f'單日 {chg:+.2f} 點（{sdx[-2][0]}→{ddx}）'
+    # Brent 原油（使用者觀察區間 $98–102）
+    dbr, vbr = _latest_le(c, 'macro_daily', 'brent', D)
+    sbr = _series(c, 'macro_daily', 'brent', D, 3)
+    br_txt = '—'
+    if vbr is not None and len(sbr) >= 2:
+        chg = sbr[-1][1] - sbr[-2][1]
+        br_txt = f'單日 {chg:+.2f}（{sbr[-2][0]}→{dbr}）'
+    band = ''
+    if vbr is not None:
+        band = ('，**突破 $102 上緣** ⚠' if vbr > 102
+                else '，**跌破 $98 下緣** ⚠' if vbr < 98
+                else '，在 $98–102 區間內')
     L.append('| 指標 | 水準 | 變化／狀態 |')
     L.append('|---|---|---|')
     L.append(f'| [美國 10Y 公債殖利率](https://www.wantgoo.com/global/us10-yr) | {f"{v10:.2f}%" if v10 is not None else "—"}（{d10 or "無"}） | 單日 {bps_txt}{alert10} |')
     L.append(f'| [美元指數](https://www.wantgoo.com/global/usdindex) | {f"{vdx:.2f}" if vdx is not None else "—"}（{ddx or "無"}） | {dx_txt} |')
+    L.append(f'| [Brent 原油期貨](https://finance.yahoo.com/quote/BZ%3DF/) | {f"${vbr:.2f}" if vbr is not None else "—"}（{dbr or "無"}） | {br_txt}{band} |')
     L.append(f'| [10Y 期限溢價（ACM）](https://www.newyorkfed.org/research/data_indicators/term-premia-tabs) | {tp_txt}{alert_tp} | 心理面：愈高代表市場愈謹慎 |')
     L.append(f'| [10Y-2Y 利差](https://fred.stlouisfed.org/series/T10Y2Y) | {spread_txt} | 一句話：曲線形狀看景氣預期 |')
     L.append('')
@@ -182,12 +236,53 @@ def market_section(c, D):
         L.append(f'| [騰落線 ADL](https://www.wantgoo.com/stock/market-breadth-index) | '
                  f'{len(nets)}日累計 {adl:+,}，近5日 {chg5:+,}（{trend}） | '
                  f'看方向不看絕對值；與指數背離時留意 |')
+    # 台股廣度：站上季線/年線比例＋趨勢（膨脹/收縮）
+    L += _breadth_rows(c)
     if fin_chg is not None:
         L.append(f'| 融資餘額變化（上市＋上櫃） | {fin_chg:+.1f} 萬張（{fin_pct:+.2f}%） | '
                  f'{"槓桿升溫" if fin_chg > 0 else "槓桿降溫"} |')
     else:
         L.append('| 融資餘額變化 | — | 資料未回補 |')
+    L.extend(_struct_rows(c, D))
     L.append('')
+    return L
+
+
+def _struct_rows(c, D):
+    """結構指標（張林忠三工具量化版）：電金強弱 / MNQ-MYM / 台指期貨籌碼。"""
+    L = []
+    cols = ('date,semi_idx,fin_idx,elec_fin_ratio,mnq,mym,mnq_mym_ratio,'
+            'fut_for_net_oi,fut_inv_net_oi,fut_trust_net_oi,fut_retail_net_oi')
+    try:
+        r = c.execute(f'SELECT {cols} FROM market_struct WHERE date <= ? '
+                      'ORDER BY date DESC LIMIT 1', (D,)).fetchone()
+    except Exception:
+        return L
+    if not r:
+        return L
+    (d, semi, fin, efr, mnq, mym, mmr, fo, io, to, ro) = r
+    if efr is not None:
+        hist = c.execute('SELECT elec_fin_ratio FROM market_struct WHERE date <= ? '
+                         'AND elec_fin_ratio IS NOT NULL ORDER BY date DESC LIMIT 21',
+                         (D,)).fetchall()
+        chg = efr - hist[-1][0] if len(hist) == 21 else None
+        chg_s = f'（20日 {chg:+.3f}）' if chg is not None else ''
+        trend = '資金偏電子/科技' if (chg or 0) > 0 else '資金偏金融/傳產' if (chg or 0) < 0 else '方向持平'
+        L.append(f'| 電金強弱（半導體／金融） | {efr:+.3f}{chg_s}｜半導體 {semi:,.0f}／金融 {fin:,.0f} | '
+                 f'{trend}；看方向不看絕對值 |')
+    if mmr is not None:
+        L.append(f'| 美股 MNQ/MYM 強弱 | {mmr:+.3f}｜MNQ {mnq:,.0f}／MYM {mym:,.0f} | '
+                 f'上升＝科技轉強、下降＝傳產轉強 |')
+    if fo is not None:
+        hist = [x[0] for x in c.execute(
+            'SELECT fut_for_net_oi FROM market_struct WHERE fut_for_net_oi IS NOT NULL '
+            'ORDER BY date DESC LIMIT 250').fetchall()]
+        pct = sum(1 for x in hist if x <= fo) / len(hist) * 100 if hist else None
+        lvl = ('空單水位高' if pct is not None and pct <= 20 else
+               '水位中等' if pct is not None and pct <= 80 else '水位低')
+        ro_s = f'｜散戶推算 {ro:+,.0f}口' if ro is not None else ''
+        L.append(f'| 台指期貨籌碼（{d}） | 外資淨 {fo:+,.0f}口（1年分位 {pct:.0f}%）{ro_s} | '
+                 f'{lvl}＝潛在軋空燃料；散戶指標今年已漂移，僅觀察 |')
     return L
 
 
@@ -316,9 +411,56 @@ def candidates_section(c, D):
     return L
 
 
+def pullback_section(c, D):
+    """回跌近支撐候選：收盤拉回至 20 日線附近（-3%～+1%）、跌破 5 日線（短線回跌）、
+    且外資近 5 日淨額 ≥ 0（未轉大賣）。不給支撐/壓力價位，點代號開玩股網技術線圖自行判斷。"""
+    L = ['## 七、回跌近支撐候選（弱勢盤整盤短線用）']
+    L.append('條件：收盤在 20 日線 -3%～+1% 區間 ＋ 跌破 5 日線（短線回跌）＋ 外資近 5 日淨額 ≥ 0（未轉大賣）。'
+             '僅篩選、不做買賣建議；點代號開玩股網技術線圖自行判斷支撐壓力。')
+    basket = compute.load_basket()
+    sec_of, names = {}, {}
+    for s in basket['sectors']:
+        for st in s['stocks']:
+            sec_of.setdefault(st['code'], s['name'])
+            names.setdefault(st['code'], st['name'])
+    cands = []
+    for code in sec_of:
+        rows = c.execute('SELECT close, f_amt FROM inst_flow WHERE stock=? AND date<=? ORDER BY date',
+                         (code, D)).fetchall()
+        rows = [r for r in rows if r['close']]
+        if len(rows) < 25:
+            continue
+        closes = [r['close'] for r in rows]
+        ma20 = sum(closes[-20:]) / 20
+        ma5 = sum(closes[-5:]) / 5
+        close = closes[-1]
+        bias = close / ma20 - 1
+        if not (-0.03 <= bias <= 0.01):
+            continue
+        if not (close < ma5):
+            continue
+        f5 = sum((r['f_amt'] or 0.0) for r in rows[-5:])
+        if f5 < 0:
+            continue
+        chg5 = (close / closes[-6] - 1) * 100
+        cands.append({'code': code, 'name': names[code], 'sector': sec_of[code],
+                      'close': close, 'bias': bias, 'chg5': chg5, 'f5': f5})
+    cands.sort(key=lambda x: x['bias'])
+    if cands:
+        L.append('| 代號 | 名稱 | 族群 | 收盤 | 乖離20MA | 5日漲跌 | 外資近5日(億) |')
+        L.append('|---|---|---|---|---|---|---|')
+        for x in cands:
+            L.append(f'| {x["code"]} | {x["name"]} | {x["sector"]} | {x["close"]:.2f} | '
+                     f'{x["bias"]:+.1%} | {R.fp(x["chg5"])} | {R.fa(x["f5"])} |')
+    else:
+        L.append('當日無符合條件者。')
+    L.append('')
+    return L
+
+
 def blind_spots():
     return [
-        '## 七、盲點與限制',
+        '## 八、盲點與限制',
         '- v1 當日ETF 欄全為 0：未做 ETF 被動歸因，不得做「主動 vs 被動」判讀。',
         '- 上櫃歷史金額為估算值（以最新收盤價估算，沿用既有做法）；上櫃歷史 5 日漲幅缺資料時顯示 —。',
         '- 總經數據一律 T+1：10Y/期限溢價為美國前一交易日收盤，報告已標示資料日期。',
@@ -350,6 +492,7 @@ def build(D=None):
     L += rank_section(c, D, ranked)
     L += competitors_section(c, D, ranked)
     L += candidates_section(c, D)
+    L += pullback_section(c, D)
     L += blind_spots()
     L.append(DISCLAIMER)
     c.close()
