@@ -104,6 +104,37 @@ def is_trading_day(yyyymmdd):
     return bool(q and q.get('data'))
 
 
+# TWSE 官方休市日備援表（期交所 115 年開休市日曆），僅在 holidays 套件不可用時使用
+_MARKET_HOLIDAYS_FALLBACK = frozenset([
+    '20260928',  # 教師節
+    '20261009',  # 國慶日補假
+    '20261026',  # 光復節補假
+    '20261225',  # 行憲紀念日
+    '20270101',  # 開國紀念日
+])
+
+
+def is_market_open(yyyymmdd):
+    """盤前判斷用：集中交易市場在該日是否開市。
+
+    注意：is_trading_day() 是查「該日」的盤後行情資料，開盤前呼叫永遠回傳
+    False（當日資料尚不存在），只適用 18:00 盤後流程。晨間摘要這類開盤前
+    任務必須用本函數的行事曆判斷（週一至週五＋台灣國定假日，2025 年修法後
+    含 9/28 教師節、10/25 光復節、12/25 行憲紀念日、5/1 勞動節全面放假）。
+    """
+    from datetime import datetime as _dt
+    d = _dt.strptime(yyyymmdd, '%Y%m%d').date()
+    if d.weekday() >= 5:
+        return False
+    try:
+        sys.path.insert(0, '/home/hatch/workspace/.pylibs')
+        import holidays as _holidays
+        tw = _holidays.Taiwan(years=[d.year])
+        return d not in tw
+    except Exception:
+        return yyyymmdd not in _MARKET_HOLIDAYS_FALLBACK
+
+
 def roc_date(yyyymmdd):
     return f'{int(yyyymmdd[:4]) - 1911}/{yyyymmdd[4:6]}/{yyyymmdd[6:8]}'
 
@@ -208,29 +239,59 @@ def etl_date(con, yyyymmdd):
         fl = flows.get(code, {})
         q = quotes.get(code, {})
         close = q.get('close')  # None when no quote (OTC on historical dates, delisted)
+        # 2026-10-09 教訓：重跑舊日期時若行情端點抓不到資料（MI_INDEX 失敗/截斷），
+        # quotes 為空會把已存在的 close/turnover/spread/金額欄全部蓋成 NULL
+        # （20261006 曾被 10/8＋10/9 的重跑洗掉，需用 SectorDetect 手工回補）。
+        # 修復：新值為 None 時保留舊列既有值，不回寫 NULL。
+        old = cur.execute(
+            'SELECT f_buy, f_sell, f_net, t_buy, t_sell, t_net, d_buy, d_sell, d_net,'
+            ' close, turnover, spread, f_amt, t_amt, d_amt FROM inst_flow WHERE date=? AND stock=?',
+            (yyyymmdd, code)).fetchone()
+        # 2026-10-21 教訓：TPEx 法人端點抓取失敗時上櫃股不會出現在 flows，
+        # 舊邏輯會把既有流量整列覆寫為 0（籃子回補重跑時踩到，SEC_10 對帳
+        # -3.83 vs -2.22 發現）。修復：本次完全沒有該股流量且舊列任一淨額
+        # 非零時，整列沿用舊值、不覆寫。
+        if code not in flows and old and any(old[i] for i in (2, 5, 8)):
+            rows += 1
+            continue
+        if close is None and old and old[9] is not None:
+            # 行情抓不到但舊列已有收盤價：沿用舊 close/turnover/spread，
+            # 金額欄用「新流量 × 舊收盤」重算（流量可能被 TWSE 修正過）。
+            close, turnover, spread = old[9], old[10], old[11]
+        else:
+            turnover, spread = q.get('turnover'), q.get('spread')
         f_net, t_net, d_net = fl.get('f_net', 0.0), fl.get('t_net', 0.0), fl.get('d_net', 0.0)
         amt = lambda net: net * close / 1e8 if close else None
+        f_amt, t_amt, d_amt = amt(f_net), amt(t_net), amt(d_net)
         cur.execute('''INSERT OR REPLACE INTO inst_flow VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
             (yyyymmdd, code,
              fl.get('f_buy', 0), fl.get('f_sell', 0), f_net,
              fl.get('t_buy', 0), fl.get('t_sell', 0), t_net,
              fl.get('d_buy', 0), fl.get('d_sell', 0), d_net,
-             close, q.get('turnover'), q.get('spread'),
-             amt(f_net), amt(t_net), amt(d_net)))
+             close, turnover, spread,
+             f_amt, t_amt, d_amt))
         rows += 1
 
     # margin (unit: 張) — TWSE first, TPEx overlay for OTC
+    # 2026-10-16 修正：MI_MARGN 欄位以 fields 欄名定位（舊 r[4],r[5] 實為
+    # 現金償還,前日餘額）；合計列以 r[1]=='合計' 判定（r[0] 為全形空白）。
     marg = {}
     twse_mtot = (0.0, 0.0)  # (前日餘額, 今日餘額) 上市合計
     if mgn:
         for t in mgn.get('tables', []):
             if '融資融券彙總' in (t.get('title') or ''):
+                fields = t.get('fields') or []
+                try:
+                    i_prev = fields.index('前日餘額')
+                    i_today = fields.index('今日餘額')
+                except ValueError:
+                    i_prev, i_today = 5, 6
                 for r in t['data']:
                     code = r[0].strip()
-                    if code == '合計':
-                        twse_mtot = (num(r[4]), num(r[5]))
+                    if r[1].strip() == '合計' or code == '合計':
+                        twse_mtot = (num(r[i_prev]), num(r[i_today]))
                     else:
-                        marg[code] = (num(r[4]), num(r[5]))
+                        marg[code] = (num(r[i_prev]), num(r[i_today]))
                 break
     for code, (prev, today) in tpex_margin.items():
         marg.setdefault(code, (prev, today))
@@ -278,8 +339,12 @@ def latest_trading_day():
     d = date.today()
     for _ in range(15):
         ymd = d.strftime('%Y%m%d')
-        if is_trading_day(ymd):
-            return ymd
+        # TWSE 端點偶發 IncompleteRead（大 JSON 被截斷）→ 單日重試 3 次，
+        # 避免瞬斷被誤判為休市而退回舊交易日重推舊報告（2026-10-08 實例）
+        for _ in range(3):
+            if is_trading_day(ymd):
+                return ymd
+            time.sleep(2)
         d -= timedelta(days=1)
     return None
 
