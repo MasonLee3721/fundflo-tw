@@ -676,56 +676,14 @@
   },
   {
    "id": "SEC_09",
-   "name": "PCB、高階載板與 CCL",
+   "name": "PCB",
    "source_sheet": "38族群代表股",
    "stocks": [
-    {
-     "code": "2383",
-     "name": "台光電",
-     "note": "",
-     "role": "AI伺服器CCL霸主",
-     "sub_theme": null
-    },
-    {
-     "code": "3037",
-     "name": "欣興",
-     "note": "",
-     "role": "ABF載板龍頭",
-     "sub_theme": null
-    },
     {
      "code": "2368",
      "name": "金像電",
      "note": "",
      "role": "伺服器高多層板龍頭",
-     "sub_theme": null
-    },
-    {
-     "code": "6274",
-     "name": "台燿",
-     "note": "",
-     "role": "高頻高速CCL主力",
-     "sub_theme": null
-    },
-    {
-     "code": "8046",
-     "name": "南電",
-     "note": "",
-     "role": "台塑ABF/BT載板",
-     "sub_theme": null
-    },
-    {
-     "code": "3189",
-     "name": "景碩",
-     "note": "",
-     "role": "和碩記憶體載板",
-     "sub_theme": null
-    },
-    {
-     "code": "6213",
-     "name": "聯茂",
-     "note": "",
-     "role": "高速伺服器CCL",
      "sub_theme": null
     },
     {
@@ -3043,6 +3001,83 @@
      "name": "台玻",
      "note": "",
      "role": "純度指標",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_39",
+   "name": "CCL 與玻纖布",
+   "source_sheet": "20261021 供應鏈拆分",
+   "stocks": [
+    {
+     "code": "2383",
+     "name": "台光電",
+     "note": "",
+     "role": "AI伺服器CCL霸主",
+     "sub_theme": null
+    },
+    {
+     "code": "6274",
+     "name": "台燿",
+     "note": "",
+     "role": "高頻高速CCL主力",
+     "sub_theme": null
+    },
+    {
+     "code": "6213",
+     "name": "聯茂",
+     "note": "",
+     "role": "高速伺服器CCL",
+     "sub_theme": null
+    },
+    {
+     "code": "1815",
+     "name": "富喬",
+     "note": "",
+     "role": "電子級玻纖布龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "5340",
+     "name": "建榮",
+     "note": "",
+     "role": "玻纖布二線",
+     "sub_theme": null
+    },
+    {
+     "code": "5475",
+     "name": "德宏",
+     "note": "",
+     "role": "玻纖紗與玻纖布",
+     "sub_theme": null
+    }
+   ]
+  },
+  {
+   "id": "SEC_40",
+   "name": "ABF 載板",
+   "source_sheet": "20261021 供應鏈拆分",
+   "stocks": [
+    {
+     "code": "3037",
+     "name": "欣興",
+     "note": "",
+     "role": "ABF載板龍頭",
+     "sub_theme": null
+    },
+    {
+     "code": "8046",
+     "name": "南電",
+     "note": "",
+     "role": "台塑ABF/BT載板",
+     "sub_theme": null
+    },
+    {
+     "code": "3189",
+     "name": "景碩",
+     "note": "",
+     "role": "和碩記憶體載板",
      "sub_theme": null
     }
    ]
