@@ -153,6 +153,43 @@ def macro_section(c, D):
     L.append('')
     L.append(TRANSMISSION)
     L.append('')
+    L += credit_lines(D)
+    return L
+
+
+def credit_lines(D):
+    """AI 信用鏈｜最弱木板：ORCL／CRWV CDS 方向性事件（近 7 日）。
+    資料來自社群雷達共用事件檔（雷達晨晚版掃描時寫入）；CDS 實際點數在
+    付費源、免費管道拿不到，只列事件方向，不虛構點數。"""
+    import json as _json
+    from datetime import datetime, timedelta
+    L = ['### AI 信用鏈｜最弱木板（ORCL／CRWV 信用事件，近 7 日；來源：社群雷達掃描）']
+    evs = []
+    try:
+        data = _json.load(open('/home/hatch/workspace/socialradar/content/credit_events.json',
+                               encoding='utf-8'))
+        evs = data.get('events', [])
+    except Exception:
+        pass
+    try:
+        d0 = datetime.strptime(D, '%Y%m%d')
+        lo = (d0 - timedelta(days=7)).strftime('%Y%m%d')
+    except Exception:
+        lo = '00000000'
+    recent = [e for e in evs if lo <= str(e.get('date', '')) <= D]
+    recent.sort(key=lambda e: str(e.get('date', '')), reverse=True)
+    if recent:
+        for e in recent[:5]:
+            d = str(e.get('date', ''))
+            ds = f'{d[:4]}-{d[4:6]}-{d[6:]}' if len(d) == 8 else d
+            src = e.get('source') or ''
+            txt = e.get('event', '')
+            if src:
+                txt = f'[{txt}]({src})'
+            L.append(f'- {ds} **{e.get("entity", "")}**：{txt}')
+    else:
+        L.append('- 近 7 日無新信用事件（監控中：ORCL／CRWV CDS 方向、發債與評級動作、新雲融資條件）')
+    L.append('')
     return L
 
 
@@ -357,18 +394,42 @@ def competitors_section(c, D, ranked):
             rows.sort(key=lambda x: -x[2])
             return {rid: (i + 1, nm, mo) for i, (rid, nm, mo) in enumerate(rows)}
         r0, r1 = mom_rank(Dp), mom_rank(D)
+        by_id = {s['id']: s for s in compute.load_basket()['sectors']}
+
+        def rep_stocks(rid, mo1):
+            # 代表股：族群內個股 5 日動能貢獻前 3（方向隨族群動能），玩股網技術線圖連結
+            sec = by_id.get(rid)
+            if not sec:
+                return '—'
+            ms = []
+            for st in sec['stocks']:
+                m = compute.stock_metrics(c, st['code'], D)
+                if m and m['mom5'] is not None:
+                    ms.append((st['code'], st['name'], m['mom5']))
+            if not ms:
+                return '—'
+            if mo1 >= 0:
+                ms.sort(key=lambda x: -x[2])
+                pick = [x for x in ms if x[2] > 0][:3] or ms[:3]
+            else:
+                ms.sort(key=lambda x: x[2])
+                pick = [x for x in ms if x[2] < 0][:3] or ms[:3]
+            return '、'.join(
+                f'[{cd} {nm}](https://www.wantgoo.com/stock/{cd}/technical-chart){R.fa(v)}'
+                for cd, nm, v in pick)
+
         moves = []
         for rid, (rk1, nm, mo1) in r1.items():
             rk0 = r0[rid][0]
             if rk1 != rk0:
-                moves.append((abs(rk1 - rk0), rk0, rk1, nm, mo1))
+                moves.append((abs(rk1 - rk0), rk0, rk1, nm, mo1, rid))
         moves.sort(key=lambda x: -x[0])
         if moves:
-            L.append('| 族群 | 前日名次 | 今日名次 | 升降 | 5日動能(億) |')
-            L.append('|---|---|---|---|---|')
-            for _, rk0, rk1, nm, mo1 in moves[:5]:
+            L.append('| 族群 | 前日名次 | 今日名次 | 升降 | 5日動能(億) | 代表股（5日動能前 3） |')
+            L.append('|---|---|---|---|---|---|')
+            for _, rk0, rk1, nm, mo1, rid in moves[:5]:
                 arrow = f'↑{rk0 - rk1}' if rk1 < rk0 else f'↓{rk1 - rk0}'
-                L.append(f'| {nm} | {rk0} | {rk1} | {arrow} | {R.fa(mo1)} |')
+                L.append(f'| {nm} | {rk0} | {rk1} | {arrow} | {R.fa(mo1)} | {rep_stocks(rid, mo1)} |')
         else:
             L.append('名次無變動。')
     else:
